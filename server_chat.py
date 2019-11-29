@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 29 16:25:35 2019
+
+@author: pushparajkarthick_d
+"""
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
 
@@ -6,7 +12,7 @@ from threading import Thread
 def accepting_connection():
     while True:
         client, client_address = SERVER.accept()
-        print("%s:%s has connected" % client_address())
+        print("%s:%s has connected." % client_address)
         client.send(bytes("Greetings from Lucifer..! Now type your name and press enter!", "utf8"))
         addresses[client] = client_address
         Thread(target=handle_client, args=(client,)).start()
